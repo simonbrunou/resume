@@ -1,426 +1,480 @@
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>CV - Simon Brunou</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f4f4;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.8);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            display: block;
-            margin: 0 auto 15px auto;
-        }
-
-        .name {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 5px;
-        }
-
-        .profile-text {
-            text-align: justify;
-            line-height: 1.7;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 25px;
-            border-left: 3px solid #667eea;
-            padding-left: 15px;
-        }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .company {
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-
-        .date {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-
-        .job-description {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .job-description li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 15px;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .job-description li:before {
-            content: "▸";
-            color: #667eea;
-            position: absolute;
-            left: 0;
-        }
-
-        .skills-grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        .skill-category {
-            margin-bottom: 15px;
-        }
-
-        .skill-category-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .languages {
-            display: grid;
-            gap: 10px;
-        }
-
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .language-name {
-            font-weight: 500;
-        }
-
-        .language-level {
-            background: #667eea;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 20px;
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>CV - Simon Brunou</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .title {
-                font-size: 2rem;
-            }
-
-            .name {
-                font-size: 1.5rem;
-            }
-
-            .profile-photo {
-                width: 100px;
-                height: 100px;
-            }
-        }
-
-        @page {
-            margin: 0.5in;
-        }
-
-        @media print {
             body {
-                background: white;
+                font-family: "Arial", sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background: #f4f4f4;
             }
 
             .container {
-                box-shadow: none;
-                margin: 0;
+                max-width: 800px;
+                margin: 20px auto;
+                background: white;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                overflow: hidden;
             }
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <header class="header">
-        <img src="./photo.png" alt="Photo de profil de Simon Brunou" class="profile-photo" width="76" height="76" loading="lazy">
-        <h1 class="name">Simon Brunou</h1>
-        <h2 class="title">Développeur Fullstack</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <span>📱</span>
-                <a href="tel:+33621041865">06 21 04 18 65</a>
-            </div>
-            <div class="contact-item">
-                <span>✉️</span>
-                <a href="mailto:simon.brunou@proton.me">simon.brunou@proton.me</a>
-            </div>
-            <div class="contact-item">
-                <span>📍</span>
-                <span>Saint-Nolff, Bretagne</span>
+
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid rgba(255, 255, 255, 0.8);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                display: block;
+                margin: 0 auto 15px auto;
+            }
+
+            .name {
+                font-size: 1.8rem;
+                font-weight: 300;
+                margin-bottom: 10px;
+                letter-spacing: 2px;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .contact-info {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.9rem;
+            }
+
+            .main-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                padding: 40px;
+            }
+
+            .section {
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #667eea;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-bottom: 2px solid #667eea;
+                padding-bottom: 5px;
+            }
+
+            .profile-text {
+                text-align: justify;
+                line-height: 1.7;
+                font-size: 0.95rem;
+                color: #555;
+            }
+
+            .experience-item,
+            .education-item {
+                margin-bottom: 25px;
+                border-left: 3px solid #667eea;
+                padding-left: 15px;
+            }
+
+            .job-title {
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: #333;
+            }
+
+            .company {
+                font-weight: bold;
+                color: #667eea;
+                margin-bottom: 5px;
+            }
+
+            .date {
+                color: #888;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                font-style: italic;
+            }
+
+            .job-description {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            .job-description li {
+                margin-bottom: 5px;
+                position: relative;
+                padding-left: 15px;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .job-description li:before {
+                content: "▸";
+                color: #667eea;
+                position: absolute;
+                left: 0;
+            }
+
+            .skills-grid {
+                display: grid;
+                gap: 20px;
+            }
+
+            .skill-category {
+                margin-bottom: 15px;
+            }
+
+            .skill-category-title {
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+            }
+
+            .skill-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .skill-tag {
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                color: white;
+                padding: 4px 12px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            .languages {
+                display: grid;
+                gap: 10px;
+            }
+
+            .language-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .language-name {
+                font-weight: 500;
+            }
+
+            .language-level {
+                background: #667eea;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 10px;
+                font-size: 0.8rem;
+            }
+
+            @media (max-width: 768px) {
+                .main-content {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                    padding: 20px;
+                }
+
+                .contact-info {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .title {
+                    font-size: 2rem;
+                }
+
+                .name {
+                    font-size: 1.5rem;
+                }
+
+                .profile-photo {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            @page {
+                margin: 0.5in;
+            }
+
+            @media print {
+                body {
+                    background: white;
+                }
+
+                .container {
+                    box-shadow: none;
+                    margin: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <img
+                    src="./photo.png"
+                    alt="Photo de profil de Simon Brunou"
+                    class="profile-photo"
+                    width="76"
+                    height="76"
+                    loading="lazy"
+                />
+                <h1 class="name">Simon Brunou</h1>
+                <h2 class="title">Développeur Fullstack</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="tel:+33621041865">06 21 04 18 65</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <a href="mailto:simon.brunou@proton.me"
+                            >simon.brunou@proton.me</a
+                        >
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Saint-Nolff, Bretagne</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <div class="left-column">
+                    <section class="section">
+                        <h3 class="section-title">Profil</h3>
+                        <p class="profile-text">
+                            Développeur Fullstack impliqué, motivé et sérieux
+                            avec de l'expérience dans le développement
+                            d'applications mobiles, la gestion de projets, la
+                            communication client et la livraison régulière de
+                            produits.
+                        </p>
+                    </section>
+
+                    <section class="section">
+                        <h3 class="section-title">Expérience</h3>
+
+                        <div class="experience-item">
+                            <div class="job-title">
+                                Développeur informatique
+                            </div>
+                            <div class="company">BYSTAMP</div>
+                            <div class="date">Juillet 2017 - Février 2025</div>
+                            <ul class="job-description">
+                                <li>
+                                    Développement d'applications mobiles Android
+                                    et iOS
+                                </li>
+                                <li>Développement de middleware</li>
+                                <li>
+                                    Développement, documentation et livraison
+                                    continue de bibliothèques de code
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="job-title">Stage de fin d'études</div>
+                            <div class="company">BYSTAMP</div>
+                            <div class="date">Janvier 2017 - Juillet 2017</div>
+                            <ul class="job-description">
+                                <li>
+                                    Développement d'applications mobiles Android
+                                    et iOS
+                                </li>
+                                <li>
+                                    Maintenance et amélioration de web-services
+                                </li>
+                                <li>
+                                    Maintenance et amélioration de sites web
+                                </li>
+                                <li>
+                                    Mise en place d'outils de Business
+                                    Intelligence et d'une CRM
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="job-title">Stage</div>
+                            <div class="company">IUT de Vannes</div>
+                            <div class="date">Mars 2014 - Juin 2014</div>
+                            <ul class="job-description">
+                                <li>
+                                    Maintenance et évolution d'une application
+                                    mobile
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h3 class="section-title">Formation</h3>
+
+                        <div class="education-item">
+                            <div class="job-title">
+                                Master Multimédia, Web, Réseaux
+                            </div>
+                            <div class="company">
+                                Université de Bretagne Sud
+                            </div>
+                            <div class="date">2015 - 2017</div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="job-title">
+                                Licence Mathématiques, Informatique,
+                                Statistiques
+                            </div>
+                            <div class="company">
+                                Université de Bretagne Sud
+                            </div>
+                            <div class="date">2014 - 2015</div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="job-title">DUT Informatique</div>
+                            <div class="company">IUT de Vannes</div>
+                            <div class="date">2012 - 2014</div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="right-column">
+                    <section class="section">
+                        <h3 class="section-title">Compétences</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <div class="skill-category-title">Langages</div>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Rust</span>
+                                    <span class="skill-tag">Dart</span>
+                                    <span class="skill-tag">Kotlin</span>
+                                    <span class="skill-tag">Swift</span>
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-category-title">
+                                    Frameworks
+                                </div>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Flutter</span>
+                                    <span class="skill-tag">React Native</span>
+                                    <span class="skill-tag">Android</span>
+                                    <span class="skill-tag">iOS</span>
+                                    <span class="skill-tag">React</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-category-title">Outils</div>
+                                <div class="skill-list">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">GitLab CI/CD</span>
+                                    <span class="skill-tag">Terraform</span>
+                                    <span class="skill-tag">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h3 class="section-title">Langues</h3>
+                        <div class="languages">
+                            <div class="language-item">
+                                <span class="language-name">Anglais</span>
+                                <span class="language-level">Fluent</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Allemand</span>
+                                <span class="language-level">Notions</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-    </header>
 
-    <div class="main-content">
-        <div class="left-column">
-            <section class="section">
-                <h3 class="section-title">Profil</h3>
-                <p class="profile-text">
-                    Développeur Fullstack impliqué, motivé et sérieux avec de l'expérience dans le développement
-                    d'applications mobiles, la gestion de projets, la communication client et la livraison régulière de
-                    produits.
-                </p>
-            </section>
+        <!-- Performance: Lazy loading pour les images -->
+        <script>
+            // Amélioration progressive pour les navigateurs anciens
+            if ("loading" in HTMLImageElement.prototype) {
+                const img = document.querySelector(".profile-photo");
+                if (img) img.loading = "lazy";
+            }
 
-            <section class="section">
-                <h3 class="section-title">Expérience</h3>
+            // Améliorer l'accessibilité
+            document.addEventListener("DOMContentLoaded", function () {
+                // Ajouter des attributs aria-label pour les liens de contact
+                const phoneLink = document.querySelector('a[href^="tel:"]');
+                const emailLink = document.querySelector('a[href^="mailto:"]');
 
-                <div class="experience-item">
-                    <div class="job-title">Développeur informatique</div>
-                    <div class="company">BYSTAMP</div>
-                    <div class="date">Juillet 2017 - Février 2025</div>
-                    <ul class="job-description">
-                        <li>Développement d'applications mobiles Android et iOS</li>
-                        <li>Développement de middleware</li>
-                        <li>Développement, documentation et livraison continue de bibliothèques de code</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-title">Stage de fin d'études</div>
-                    <div class="company">BYSTAMP</div>
-                    <div class="date">Janvier 2017 - Juillet 2017</div>
-                    <ul class="job-description">
-                        <li>Développement d'applications mobiles Android et iOS</li>
-                        <li>Maintenance et amélioration de web-services</li>
-                        <li>Maintenance et amélioration de sites web</li>
-                        <li>Mise en place d'outils de Business Intelligence et d'une CRM</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-title">Stage</div>
-                    <div class="company">IUT de Vannes</div>
-                    <div class="date">Mars 2014 - Juin 2014</div>
-                    <ul class="job-description">
-                        <li>Maintenance et évolution d'une application mobile</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Formation</h3>
-
-                <div class="education-item">
-                    <div class="job-title">Master Multimédia, Web, Réseaux</div>
-                    <div class="company">Université de Bretagne Sud</div>
-                    <div class="date">2015 - 2017</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="job-title">Licence Mathématiques, Informatique, Statistiques</div>
-                    <div class="company">Université de Bretagne Sud</div>
-                    <div class="date">2014 - 2015</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="job-title">DUT Informatique</div>
-                    <div class="company">IUT de Vannes</div>
-                    <div class="date">2012 - 2014</div>
-                </div>
-            </section>
-        </div>
-
-        <div class="right-column">
-            <section class="section">
-                <h3 class="section-title">Compétences</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="skill-category-title">Langages</div>
-                        <div class="skill-list">
-                            <span class="skill-tag">Rust</span>
-                            <span class="skill-tag">Dart</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">Swift</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-category-title">Frameworks</div>
-                        <div class="skill-list">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">React Native</span>
-                            <span class="skill-tag">Android</span>
-                            <span class="skill-tag">iOS</span>
-                            <span class="skill-tag">React</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-category-title">Outils</div>
-                        <div class="skill-list">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">GitLab CI/CD</span>
-                            <span class="skill-tag">Terraform</span>
-                            <span class="skill-tag">Figma</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h3 class="section-title">Langues</h3>
-                <div class="languages">
-                    <div class="language-item">
-                        <span class="language-name">Anglais</span>
-                        <span class="language-level">Fluent</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Allemand</span>
-                        <span class="language-level">Notions</span>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-
-<!-- Performance: Lazy loading pour les images -->
-<script>
-    // Amélioration progressive pour les navigateurs anciens
-    if ('loading' in HTMLImageElement.prototype) {
-        const img = document.querySelector('.profile-photo');
-        if (img) img.loading = 'lazy';
-    }
-
-    // Améliorer l'accessibilité
-    document.addEventListener('DOMContentLoaded', function () {
-        // Ajouter des attributs aria-label pour les liens de contact
-        const phoneLink = document.querySelector('a[href^="tel:"]');
-        const emailLink = document.querySelector('a[href^="mailto:"]');
-
-        if (phoneLink) phoneLink.setAttribute('aria-label', 'Appeler Simon Brunou');
-        if (emailLink) emailLink.setAttribute('aria-label', 'Envoyer un email à Simon Brunou');
-    });
-
-    // Service Worker pour la mise en cache (optionnel)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('./sw.js').catch(function () {
-                // Service worker not available, continue without caching
+                if (phoneLink)
+                    phoneLink.setAttribute(
+                        "aria-label",
+                        "Appeler Simon Brunou",
+                    );
+                if (emailLink)
+                    emailLink.setAttribute(
+                        "aria-label",
+                        "Envoyer un email à Simon Brunou",
+                    );
             });
-        });
-    }
-</script>
-</body>
+
+            // Service Worker pour la mise en cache (optionnel)
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("./sw.js")
+                        .catch(function () {
+                            // Service worker not available, continue without caching
+                        });
+                });
+            }
+        </script>
+    </body>
 </html>
